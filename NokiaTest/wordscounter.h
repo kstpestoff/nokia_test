@@ -2,7 +2,7 @@
 
 void AsciiTextWordCalculation
 (
-	const char*pText,		///< [out] output sum
-	const INT textLen,				///< [in] text length in bytes
-	const char* pWordsQtty	///< [out] output array. Must be 45 bytes length 
+	char*pText,			///< [out] output sum
+	INT textLen,		///< [in] text length in bytes
+	char* pWordsQtty	///< [out] output array. Must be 45 bytes length 
 );

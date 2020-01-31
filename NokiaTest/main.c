@@ -29,7 +29,7 @@ void main()
 	char* pWordsQtty = (char*)malloc(WORDS_MAX_LENGTH * sizeof(char));
 			
 	AsciiTextWordCalculation
-	(
+	(  /*1 5     4    2  9        */
 		"I don't need no education",	///< [out] output sum
 		26,								///< [in] text length in bytes
 		pWordsQtty						///< [out] output array. Must be 45 bytes length 
@@ -37,11 +37,10 @@ void main()
 
 	printf("AsciiTextWordCalculation: ");
 
-	for (int i = 0; i < primesQtty; i++)
+	for (int i = 0; i < WORDS_MAX_LENGTH; i++)
 	{
-		printf("cur primes [%d] is %d\n", i, pPrimes[i]);
+		printf("words len %d is %d words\n", i, pWordsQtty[i]);
 	}
-
 
 	return;
 }

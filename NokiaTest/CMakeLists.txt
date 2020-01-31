@@ -4,7 +4,9 @@
 set(CMAKE_C_FLAGS "std=c99")
 
 add_executable(main 
-  main.c
-  primeNumbers.c
-  primeNumbers.h
+	main.c	
+	primeNumbers.c
+	primeNumbers.h
+	wordscounter.c
+	wordscounter.h
 )

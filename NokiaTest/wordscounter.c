@@ -16,7 +16,8 @@ We can do this because we don't have any additional restriction in statement of 
 
 we use c99.
 ****************************************************************************************************/
-#include "assert.h" 
+#include <assert.h> 
+#include "types.h" 
 
 #define WORDS_MAX_LENGTH (45)	// maximum primes number 
 /*************************************************************************************************//**
@@ -24,9 +25,9 @@ we use c99.
 ****************************************************************************************************/
 void AsciiTextWordCalculation
 (
-	const char* restrict pText,		///< [out] output sum
-	const INT textLen,				///< [in] text length in bytes
-	const char* restrict pWordsQtty	///< [out] output array. Must be 45 bytes length 
+	char* pText,		///< [out] output sum
+	INT textLen,				///< [in] text length in bytes
+	char* pWordsQtty	///< [out] output array. Must be 45 bytes length 
 )
 {
 	assert(pText);
@@ -46,7 +47,7 @@ void AsciiTextWordCalculation
 	for (int i = 0; i < textLen; i++)
 	{
 
-		if ((pText[] != '/n' ) || (pText[] != 0x0 ))
+		if ( (pText[i] != 0x20) )
 		{
 			wordLen++;			
 		}
@@ -58,7 +59,7 @@ void AsciiTextWordCalculation
 			wordLen = 0;
 		}
 	} 
-
-
-
+	
+	assert(wordLen < WORDS_MAX_LENGTH);
+	pWordsQtty[--wordLen]++;
 }
