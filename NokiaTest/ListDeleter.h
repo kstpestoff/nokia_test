@@ -1,6 +1,8 @@
+#include "types.h"
+
+//without forward declaration
 typedef struct tList
 {
-	List* next;
-	void* payload;
-};
-
+	void* pNext;			///> pNext list 
+	void* pPayload;			///> payload
+}sList;

@@ -1,5 +1,5 @@
 /*************************************************************************************************//**
-@file   wordscounter.c
+@file   wordsCounter.c
 @author Pestoff K.A.
 @brief  2. Write a function that counts the number of words in the text for each word length 
 		(X words with 1-letter length, Y words with 2-letters length, etc.) 
@@ -12,7 +12,6 @@ For simplicity:
 that is 45 letter long. 
 2. Also we suppose that we have ASCI code input string.
 We can do this because we don't have any additional restriction in statement of the problem.
-
 
 we use c99.
 ****************************************************************************************************/
@@ -46,7 +45,6 @@ void AsciiTextWordCalculation
 
 	for (int i = 0; i < textLen; i++)
 	{
-
 		if ( (pText[i] != 0x20) )
 		{
 			wordLen++;			

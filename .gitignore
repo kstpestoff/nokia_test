@@ -1,0 +1,10 @@
+
+*.db
+NokiaTest/.vs/NokiaTest/v16/.suo
+*.db
+*.opendb
+*.db
+*.ipch
+*.ipch
+*.sqlite
+*.json

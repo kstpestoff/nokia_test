@@ -2,7 +2,8 @@
 #include <stdlib.h> 
 
 #include "primeNumbers.h"
-#include "wordscounter.h"
+#include "wordsCounter.h"
+#include "listDeleter.h"
 
 void main()
 {	
@@ -11,6 +12,7 @@ void main()
 
 	USHORT* pPrimes = (USHORT*)malloc(primesQtty*sizeof(USHORT));
 
+	printf("1. primeNumberSum: ");
 	primeNumberSum
 	(
 		&sum,			///< [out] output sum
@@ -18,7 +20,6 @@ void main()
 		pPrimes 		///< [in] pointer to output primes array 
 	);
 
-	printf("primeNumberSum: ");
 	printf("sum for %d first primes numbers is %d\n", primesQtty, sum);
 
 	for (int i = 0; i < primesQtty; i++)
@@ -28,6 +29,7 @@ void main()
 
 	char* pWordsQtty = (char*)malloc(WORDS_MAX_LENGTH * sizeof(char));
 			
+	printf("2. AsciiTextWordCalculation: ");
 	AsciiTextWordCalculation
 	(  /*1 5     4    2  9        */
 		"I don't need no education",	///< [out] output sum
@@ -35,12 +37,12 @@ void main()
 		pWordsQtty						///< [out] output array. Must be 45 bytes length 
 	);
 
-	printf("AsciiTextWordCalculation: ");
-
 	for (int i = 0; i < WORDS_MAX_LENGTH; i++)
 	{
 		printf("words len %d is %d words\n", i, pWordsQtty[i]);
 	}
+
+
 
 	return;
 }
