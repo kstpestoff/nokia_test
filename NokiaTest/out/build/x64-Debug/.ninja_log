@@ -38,3 +38,10 @@
 4	241	602252811	CMakeFiles/main.dir/ListDeleter.c.obj	a14a426efb8da3d9
 0	242	602252811	CMakeFiles/main.dir/main.c.obj	7b283542ed633f0a
 243	418	602252811	main.exe	853d60b5ed072eb
+9	450	602343280	build.ninja	71ec8c62e93d8249
+4	503	602343280	CMakeFiles/main.dir/ListDeleter.c.obj	a14a426efb8da3d9
+10	563	602343280	CMakeFiles/main.dir/wordscounter.c.obj	cc0e85b8b4dc79fc
+1	339	602343315	CMakeFiles/main.dir/main.c.obj	7b283542ed633f0a
+340	684	602343316	main.exe	853d60b5ed072eb
+0	287	602343386	CMakeFiles/main.dir/main.c.obj	7b283542ed633f0a
+287	495	602343386	main.exe	853d60b5ed072eb

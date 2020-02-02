@@ -41,8 +41,9 @@ void main()
 	{
 		printf("words len %d is %d words\n", i, pWordsQtty[i]);
 	}
-
-
+	
+	sList list;
+	getResList(&list);
 
 	return;
 }

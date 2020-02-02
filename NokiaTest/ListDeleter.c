@@ -29,6 +29,8 @@ sList* getNextListELement(sList* pThis)
 
 void deleteListELement(sList* pThis) 
 {
+	assert(pThis);
+
 	sList* pNext = pThis->pNext;
 	
 	assert(pThis->pPayload);
@@ -40,9 +42,14 @@ void deleteListELement(sList* pThis)
 
 	pThis = pNext;
 }
+void generateList(sList* pThis)
+{
+	
+}
 
 void getResList(sList* pThis)
 {
+	assert(pThis);
 	INT idx = 1;
 // delete every fifth element
 	while (pThis->pNext)
