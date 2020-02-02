@@ -77,6 +77,13 @@ build CMakeFiles\main.dir\ListDeleter.c.obj: C_COMPILER__main ..\..\..\ListDelet
   TARGET_COMPILE_PDB = CMakeFiles\main.dir\
   TARGET_PDB = main.pdb
 
+build CMakeFiles\main.dir\uintOnesGen.c.obj: C_COMPILER__main ..\..\..\uintOnesGen.c || cmake_object_order_depends_target_main
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
+  OBJECT_DIR = CMakeFiles\main.dir
+  OBJECT_FILE_DIR = CMakeFiles\main.dir
+  TARGET_COMPILE_PDB = CMakeFiles\main.dir\
+  TARGET_PDB = main.pdb
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target main
@@ -85,7 +92,7 @@ build CMakeFiles\main.dir\ListDeleter.c.obj: C_COMPILER__main ..\..\..\ListDelet
 #############################################
 # Link the executable main.exe
 
-build main.exe: C_EXECUTABLE_LINKER__main CMakeFiles\main.dir\main.c.obj CMakeFiles\main.dir\primeNumbers.c.obj CMakeFiles\main.dir\wordscounter.c.obj CMakeFiles\main.dir\ListDeleter.c.obj
+build main.exe: C_EXECUTABLE_LINKER__main CMakeFiles\main.dir\main.c.obj CMakeFiles\main.dir\primeNumbers.c.obj CMakeFiles\main.dir\wordscounter.c.obj CMakeFiles\main.dir\ListDeleter.c.obj CMakeFiles\main.dir\uintOnesGen.c.obj
   FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

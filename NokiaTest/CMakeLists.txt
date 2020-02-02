@@ -10,6 +10,9 @@ add_executable(main
 	wordsCounter.h
 	listDeleter.c
 	listDeleter.h
+	uintOnesGen.c
+	uintOnesGen.h
+	types.h
 )
 
 set (CMAKE_C_STANDARD 99)

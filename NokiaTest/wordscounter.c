@@ -20,7 +20,7 @@ we use c99.
 
 #define WORDS_MAX_LENGTH (45)	// maximum primes number 
 /*************************************************************************************************//**
-@brief 
+@brief AsciiTextWordCalculation
 ****************************************************************************************************/
 void AsciiTextWordCalculation
 (

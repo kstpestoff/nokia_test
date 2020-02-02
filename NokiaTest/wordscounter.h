@@ -1,6 +1,8 @@
 #define WORDS_MAX_LENGTH (45)	// maximum primes number 
 
-
+/*************************************************************************************************//**
+@brief AsciiTextWordCalculation
+****************************************************************************************************/
 void AsciiTextWordCalculation
 (
 	char*pText,			///< [out] output sum

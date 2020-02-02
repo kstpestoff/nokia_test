@@ -4,9 +4,16 @@
 #include "primeNumbers.h"
 #include "wordsCounter.h"
 #include "listDeleter.h"
+#include "uintOnesGen.h"
+
+//#define TEST_1
+//#define TEST_2
+//#define TEST_3
+#define TEST_4
 
 void main()
 {	
+#ifdef TEST_1
 	const INT primesQtty = 10;
 	INT sum = 0;
 
@@ -26,7 +33,9 @@ void main()
 	{
 		printf("cur primes [%d] is %d\n", i, pPrimes[i]);
 	}
+#endif
 
+#ifdef TEST_2
 	char* pWordsQtty = (char*)malloc(WORDS_MAX_LENGTH * sizeof(char));
 			
 	printf("2. AsciiTextWordCalculation: ");
@@ -41,13 +50,31 @@ void main()
 	{
 		printf("words len %d is %d words\n", i, pWordsQtty[i]);
 	}
-	
+#endif
+
+#ifdef TEST_3
+
+	printf("3. List deleter: ");
 	sList* pList = generateList();
 	printList(pList);
 	
 	getResList(pList);
 	printf("after detelting every fifth element\n");
 	printList(pList);
+#endif
+#ifdef TEST_4
+
+	printf("4. uintOnesGen: ");
+
+	UINT max;
+	UINT min;
+	UINT val = 7<<2;
+
+	uintOnesGen(val, &min, &max);
+
+	printf("uintOnesGen: [val,min,max]: [%u,0x%X,0x%X]", val, min, max);
+#endif
+
 
 	return;
 }

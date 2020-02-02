@@ -13,3 +13,8 @@ NokiaTest/.vs/NokiaTest/v16/.suo
 *.sqlite
 *.sqlite
 *.sqlite
+*.db
+*.ipch
+*.sqlite
+*.json
+*.ninja
