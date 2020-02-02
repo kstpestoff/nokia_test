@@ -2,7 +2,7 @@
 
 project(nokia_test)
 
-add_executable(main 
+add_executable(nokia_test
 	main.c	
 	primeNumbers.c
 	primeNumbers.h
@@ -12,7 +12,9 @@ add_executable(main
 	listDeleter.h
 	uintOnesGen.c
 	uintOnesGen.h
+	treeTraceCalc.c
+	treeTraceCalc.h
 	types.h
 )
 
-set (CMAKE_C_STANDARD 99)
+target_compile_features(nokia_test PRIVATE c_std_99)

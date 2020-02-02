@@ -5,11 +5,14 @@
 #include "wordsCounter.h"
 #include "listDeleter.h"
 #include "uintOnesGen.h"
+#include "treeTraceCalc.h"
 
 //#define TEST_1
 //#define TEST_2
 //#define TEST_3
+
 #define TEST_4
+#define TEST_5
 
 void main()
 {	
@@ -74,7 +77,22 @@ void main()
 
 	printf("uintOnesGen: [val,min,max]: [%u,0x%X,0x%X]", val, min, max);
 #endif
+#ifdef TEST_5
+
+	printf("5. treeTraceCalc: ");
 
 
+	sBinTree *pTree;
+
+
+
+	for (INT i = 0; i < 20; i++)
+	{ 
+		binIsertionTree(sBinTree * pTree, int item)
+	}
+
+#endif
 	return;
 }
+
+

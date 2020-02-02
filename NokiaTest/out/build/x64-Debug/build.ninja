@@ -29,6 +29,77 @@ ninja_required_version = 1.5
 
 include rules.ninja
 
+# =============================================================================
+# Object build statements for EXECUTABLE target nokia_test
+
+
+#############################################
+# Order-only phony target for nokia_test
+
+build cmake_object_order_depends_target_nokia_test: phony || CMakeFiles\nokia_test.dir
+
+build CMakeFiles\nokia_test.dir\main.c.obj: C_COMPILER__nokia_test ..\..\..\main.c || cmake_object_order_depends_target_nokia_test
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
+  OBJECT_DIR = CMakeFiles\nokia_test.dir
+  OBJECT_FILE_DIR = CMakeFiles\nokia_test.dir
+  TARGET_COMPILE_PDB = CMakeFiles\nokia_test.dir\
+  TARGET_PDB = nokia_test.pdb
+
+build CMakeFiles\nokia_test.dir\primeNumbers.c.obj: C_COMPILER__nokia_test ..\..\..\primeNumbers.c || cmake_object_order_depends_target_nokia_test
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
+  OBJECT_DIR = CMakeFiles\nokia_test.dir
+  OBJECT_FILE_DIR = CMakeFiles\nokia_test.dir
+  TARGET_COMPILE_PDB = CMakeFiles\nokia_test.dir\
+  TARGET_PDB = nokia_test.pdb
+
+build CMakeFiles\nokia_test.dir\wordscounter.c.obj: C_COMPILER__nokia_test ..\..\..\wordscounter.c || cmake_object_order_depends_target_nokia_test
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
+  OBJECT_DIR = CMakeFiles\nokia_test.dir
+  OBJECT_FILE_DIR = CMakeFiles\nokia_test.dir
+  TARGET_COMPILE_PDB = CMakeFiles\nokia_test.dir\
+  TARGET_PDB = nokia_test.pdb
+
+build CMakeFiles\nokia_test.dir\ListDeleter.c.obj: C_COMPILER__nokia_test ..\..\..\ListDeleter.c || cmake_object_order_depends_target_nokia_test
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
+  OBJECT_DIR = CMakeFiles\nokia_test.dir
+  OBJECT_FILE_DIR = CMakeFiles\nokia_test.dir
+  TARGET_COMPILE_PDB = CMakeFiles\nokia_test.dir\
+  TARGET_PDB = nokia_test.pdb
+
+build CMakeFiles\nokia_test.dir\uintOnesGen.c.obj: C_COMPILER__nokia_test ..\..\..\uintOnesGen.c || cmake_object_order_depends_target_nokia_test
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
+  OBJECT_DIR = CMakeFiles\nokia_test.dir
+  OBJECT_FILE_DIR = CMakeFiles\nokia_test.dir
+  TARGET_COMPILE_PDB = CMakeFiles\nokia_test.dir\
+  TARGET_PDB = nokia_test.pdb
+
+build CMakeFiles\nokia_test.dir\treeTraceCalc.c.obj: C_COMPILER__nokia_test ..\..\..\treeTraceCalc.c || cmake_object_order_depends_target_nokia_test
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
+  OBJECT_DIR = CMakeFiles\nokia_test.dir
+  OBJECT_FILE_DIR = CMakeFiles\nokia_test.dir
+  TARGET_COMPILE_PDB = CMakeFiles\nokia_test.dir\
+  TARGET_PDB = nokia_test.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target nokia_test
+
+
+#############################################
+# Link the executable nokia_test.exe
+
+build nokia_test.exe: C_EXECUTABLE_LINKER__nokia_test CMakeFiles\nokia_test.dir\main.c.obj CMakeFiles\nokia_test.dir\primeNumbers.c.obj CMakeFiles\nokia_test.dir\wordscounter.c.obj CMakeFiles\nokia_test.dir\ListDeleter.c.obj CMakeFiles\nokia_test.dir\uintOnesGen.c.obj CMakeFiles\nokia_test.dir\treeTraceCalc.c.obj
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
+  LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
+  LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  OBJECT_DIR = CMakeFiles\nokia_test.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\nokia_test.dir\
+  TARGET_FILE = nokia_test.exe
+  TARGET_IMPLIB = nokia_test.lib
+  TARGET_PDB = nokia_test.pdb
+
 
 #############################################
 # Utility command for edit_cache
@@ -39,70 +110,6 @@ build CMakeFiles\edit_cache.util: CUSTOM_COMMAND
   restat = 1
 
 build edit_cache: phony CMakeFiles\edit_cache.util
-
-# =============================================================================
-# Object build statements for EXECUTABLE target main
-
-
-#############################################
-# Order-only phony target for main
-
-build cmake_object_order_depends_target_main: phony || CMakeFiles\main.dir
-
-build CMakeFiles\main.dir\main.c.obj: C_COMPILER__main ..\..\..\main.c || cmake_object_order_depends_target_main
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
-  OBJECT_DIR = CMakeFiles\main.dir
-  OBJECT_FILE_DIR = CMakeFiles\main.dir
-  TARGET_COMPILE_PDB = CMakeFiles\main.dir\
-  TARGET_PDB = main.pdb
-
-build CMakeFiles\main.dir\primeNumbers.c.obj: C_COMPILER__main ..\..\..\primeNumbers.c || cmake_object_order_depends_target_main
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
-  OBJECT_DIR = CMakeFiles\main.dir
-  OBJECT_FILE_DIR = CMakeFiles\main.dir
-  TARGET_COMPILE_PDB = CMakeFiles\main.dir\
-  TARGET_PDB = main.pdb
-
-build CMakeFiles\main.dir\wordscounter.c.obj: C_COMPILER__main ..\..\..\wordscounter.c || cmake_object_order_depends_target_main
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
-  OBJECT_DIR = CMakeFiles\main.dir
-  OBJECT_FILE_DIR = CMakeFiles\main.dir
-  TARGET_COMPILE_PDB = CMakeFiles\main.dir\
-  TARGET_PDB = main.pdb
-
-build CMakeFiles\main.dir\ListDeleter.c.obj: C_COMPILER__main ..\..\..\ListDeleter.c || cmake_object_order_depends_target_main
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
-  OBJECT_DIR = CMakeFiles\main.dir
-  OBJECT_FILE_DIR = CMakeFiles\main.dir
-  TARGET_COMPILE_PDB = CMakeFiles\main.dir\
-  TARGET_PDB = main.pdb
-
-build CMakeFiles\main.dir\uintOnesGen.c.obj: C_COMPILER__main ..\..\..\uintOnesGen.c || cmake_object_order_depends_target_main
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
-  OBJECT_DIR = CMakeFiles\main.dir
-  OBJECT_FILE_DIR = CMakeFiles\main.dir
-  TARGET_COMPILE_PDB = CMakeFiles\main.dir\
-  TARGET_PDB = main.pdb
-
-
-# =============================================================================
-# Link build statements for EXECUTABLE target main
-
-
-#############################################
-# Link the executable main.exe
-
-build main.exe: C_EXECUTABLE_LINKER__main CMakeFiles\main.dir\main.c.obj CMakeFiles\main.dir\primeNumbers.c.obj CMakeFiles\main.dir\wordscounter.c.obj CMakeFiles\main.dir\ListDeleter.c.obj CMakeFiles\main.dir\uintOnesGen.c.obj
-  FLAGS = /DWIN32 /D_WINDOWS /W3 /MDd /Zi /Ob0 /Od /RTC1
-  LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
-  LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
-  OBJECT_DIR = CMakeFiles\main.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_COMPILE_PDB = CMakeFiles\main.dir\
-  TARGET_FILE = main.exe
-  TARGET_IMPLIB = main.lib
-  TARGET_PDB = main.pdb
 
 
 #############################################
@@ -119,7 +126,7 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build main: phony main.exe
+build nokia_test: phony nokia_test.exe
 
 # =============================================================================
 # Folder targets.
@@ -136,7 +143,7 @@ build main: phony main.exe
 #############################################
 # The main all target.
 
-build all: phony main.exe
+build all: phony nokia_test.exe
 
 
 #############################################
