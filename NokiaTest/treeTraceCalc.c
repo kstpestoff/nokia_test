@@ -23,14 +23,13 @@
 #include <assert.h> 
 #include <stdlib.h>
 
-int maxDepthTree(sBinTree* pThis)
+int maxDepthTree(sBinNode* pThis)
 {
-	assert(pThis);
-	
-	sBinNode *pTree = pThis->pRoot;
+	if (pThis == NULL)
+		return 0;
 
-	int lDepth = maxDepthTree((sBinNode*)pTree->pLeft);
-	int rDepth = maxDepthTree((sBinNode*)pTree->pRight);
+	int lDepth = maxDepthTree((sBinNode*)pThis->pLeft);
+	int rDepth = maxDepthTree((sBinNode*)pThis->pRight);
 
 	if (lDepth > rDepth)
 	{
@@ -41,6 +40,18 @@ int maxDepthTree(sBinTree* pThis)
 		return(rDepth + 1); 
 	}
 }
+
+int printTree(sBinNode* pThis)
+{
+	if (pThis == NULL)
+		return 0;
+
+	printTree(pThis->pLeft);
+	printTree(pThis->pRight);
+
+	printf("node: [%p %p %p, %d ]\n",pThis, pThis->pLeft, pThis->pRight, pThis->data);
+}
+
 
 int binSearchTree(sBinTree* pTree, int item)
 {
@@ -62,120 +73,28 @@ int binSearchTree(sBinTree* pTree, int item)
 	}
 }
 
-int binIsertionTree(sBinTree* pTree, int item)
+void binIsertionTree(sBinNode** ppNode, int item)
 {
-	sBinNode* pNode, ** ppNew;
+	sBinNode* pNew = NULL;
+	sBinNode* pNode = (*ppNode);
 
-	assert(pTree != NULL);
-
-	ppNew = &pTree->pRoot;
-	pNode = pTree->pRoot;
-
-	for (;;)
+	if (!((*ppNode)))
 	{
-		if (pNode == NULL)
-		{
-			pNode = *ppNew = malloc(sizeof(*pNode));
-			if (pNode != NULL)
-			{
-				pNode->data = item;
-				pNode->pLeft = NULL;
-				pNode->pRight = NULL;
-				pTree->count++;
-
-				return 1;
-			}
-			else
-				return 0;
-		}
-
-		else if (item == pNode->data)
-			return 2;
-		else if (item > pNode->data)
-			pNode = pNode->pRight;
-		else
-			pNode = pNode->pLeft;
-	}
-}
-
-int binDeleteTree(sBinTree* pTree, int item)
-{
-	sBinNode** q, * z;
-
-	assert(pTree != NULL);
-
-	q = &pTree->pRoot;
-	z = pTree->pRoot;
-	for (;;)
-	{
-		if (z == NULL)
-			return 0;
-		else if (item == z->data)
-			break;
-		else if (item > z->data)
-		{
-			q = &z->pRight;
-			z = z->pRight;
-		}
-		else
-		{
-			q = &z->pLeft;
-			z = z->pLeft;
-		}
+		printf("add item %d\n", item);
+		pNew = (sBinNode*)malloc(sizeof(sBinNode));
+		pNew->pLeft = pNew->pRight = NULL;
+		pNew->data = item;
+		(*ppNode) = pNew;
+		return;
 	}
 
-	if (z->pRight == NULL)
-		*q = z->pLeft;
-	else
+	if (item < (*ppNode)->data)
 	{
-		sBinNode* y = z->pRight;
-		if (y->pLeft == NULL)
-		{
-			y->pLeft = z->pLeft;
-			*q = y;
-		}
-		else
-		{
-			sBinNode* x = y->pLeft;
-			while (x->pLeft != NULL)
-			{
-				y = x;
-				x = y->pLeft;
-			}
-
-			y->pLeft = x->pRight;
-			x->pLeft = z->pLeft;
-			x->pRight = z->pRight;
-
-			*q = x;
-
-		}
+		binIsertionTree(&(*ppNode)->pLeft, item);
 	}
-	pTree->count--;
-	free(z);
-	return 1;
-}
 
-void binTraverseTree(const sBinTree* pTree)
-{
-	int count = 0;
-
-	sBinNode* stack[32];
-	sBinNode* pNode;
-
-	assert(pTree != NULL);
-
-	pNode = pTree->pRoot;
-
-	for (;;) 
+	else if (item > (*ppNode)->data)
 	{
-		while (pNode != NULL) {
-			stack[count++] = pNode;
-			pNode = pNode->pLeft;
-		}
-		if (count == 0)
-			return;
-		pNode = stack[count--];
-		pNode = pNode->pRight;
+		binIsertionTree(&(*ppNode)->pRight, item);
 	}
 }

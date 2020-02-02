@@ -10,8 +10,7 @@
 //#define TEST_1
 //#define TEST_2
 //#define TEST_3
-
-#define TEST_4
+//#define TEST_4
 #define TEST_5
 
 void main()
@@ -78,19 +77,22 @@ void main()
 	printf("uintOnesGen: [val,min,max]: [%u,0x%X,0x%X]", val, min, max);
 #endif
 #ifdef TEST_5
-
 	printf("5. treeTraceCalc: ");
 
-
-	sBinTree *pTree;
-
-
+	sBinTree *pTree = (sBinTree*)malloc(sizeof(sBinTree));
+	memset(pTree, 0, sizeof(sBinTree));
 
 	for (INT i = 0; i < 20; i++)
 	{ 
-		binIsertionTree(sBinTree * pTree, int item)
+		binIsertionTree(&pTree->pRoot, i);
 	}
 
+	printTree(pTree->pRoot);
+
+	INT maxDeph = maxDepthTree(pTree->pRoot);
+
+	printf("max tree depth is %d", maxDeph);
+	
 #endif
 	return;
 }

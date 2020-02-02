@@ -14,4 +14,6 @@ typedef struct tBinTree
 	sBinNode* pRoot;
 }sBinTree;
 
-int binIsertionTree(sBinTree* pTree, int item);
+void binIsertionTree(sBinNode** pNode, int item);
+int maxDepthTree(sBinTree* pThis);
+int printTree(sBinNode* pThis);
