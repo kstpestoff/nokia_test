@@ -42,8 +42,12 @@ void main()
 		printf("words len %d is %d words\n", i, pWordsQtty[i]);
 	}
 	
-	sList list;
-	getResList(&list);
+	sList* pList = generateList();
+	printList(pList);
+	
+	getResList(pList);
+	printf("after detelting every fifth element\n");
+	printList(pList);
 
 	return;
 }

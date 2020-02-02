@@ -1,5 +1,6 @@
 #define WORDS_MAX_LENGTH (45)	// maximum primes number 
 
+
 void AsciiTextWordCalculation
 (
 	char*pText,			///< [out] output sum
