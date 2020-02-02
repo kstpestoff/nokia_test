@@ -28,16 +28,16 @@ int maxDepthTree(sBinNode* pThis)
 	if (pThis == NULL)
 		return 0;
 
-	int lDepth = maxDepthTree((sBinNode*)pThis->pLeft);
-	int rDepth = maxDepthTree((sBinNode*)pThis->pRight);
+	int leftDepth = maxDepthTree((sBinNode*)pThis->pLeft);
+	int rightDepth = maxDepthTree((sBinNode*)pThis->pRight);
 
-	if (lDepth > rDepth)
+	if (leftDepth > rightDepth)
 	{
-		return(lDepth + 1);
+		return leftDepth + 1;
 	}
 	else
 	{ 
-		return(rDepth + 1); 
+		return rightDepth + 1; 
 	}
 }
 
@@ -51,7 +51,6 @@ int printTree(sBinNode* pThis)
 
 	printf("node: [%p %p %p, %d ]\n",pThis, pThis->pLeft, pThis->pRight, pThis->data);
 }
-
 
 int binSearchTree(sBinTree* pTree, int item)
 {
@@ -82,7 +81,8 @@ void binIsertionTree(sBinNode** ppNode, int item)
 	{
 		printf("add item %d\n", item);
 		pNew = (sBinNode*)malloc(sizeof(sBinNode));
-		pNew->pLeft = pNew->pRight = NULL;
+		pNew->pLeft = NULL;
+		pNew->pRight = NULL;
 		pNew->data = item;
 		(*ppNode) = pNew;
 		return;
@@ -92,7 +92,6 @@ void binIsertionTree(sBinNode** ppNode, int item)
 	{
 		binIsertionTree(&(*ppNode)->pLeft, item);
 	}
-
 	else if (item > (*ppNode)->data)
 	{
 		binIsertionTree(&(*ppNode)->pRight, item);
